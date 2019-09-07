@@ -120,7 +120,7 @@ class MAQLClient(HttpClientBase):
         reqUrl = os.path.join(self.base_url, f'gdc/md/{self.paramProjectId}/etltask/{integrationId}')
         jobRunning = True
 
-        logging.info("Check job info at %s." % reqUrl)
+        logging.info("Checking job info at %s." % reqUrl)
         startTime = time.time()
 
         while jobRunning is True:

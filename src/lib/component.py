@@ -1,4 +1,5 @@
 import csv
+import json
 import logging
 import re
 import sys
@@ -87,7 +88,13 @@ class MAQLComponent(KBCEnvHandler):
                 logging.error("Multiple input tables provided. Please specify a single table.")
                 sys.exit(1)
 
-            inputTableColumns = inputTables[0]['columns']
+            inputTablePath = inputTables[0]['full_path']
+
+            with open(inputTablePath + '.manifest') as manFile:
+
+                manifest = json.load(manFile)
+
+            inputTableColumns = manifest['columns']
 
             if len(inputTableColumns) != 1:
 
