@@ -1,12 +1,11 @@
 {
     "connection.keboola.com": {
-      "gd_url": "https://secure.gooddata.com"
+      "gooddataUrl": "https://secure.gooddata.com"
     },
     "connection.eu-central-1.keboola.com": {
-      "gd_url": "https://keboola.eu.gooddata.com"
+      "gooddataUrl": "https://keboola.eu.gooddata.com"
     },
     "connection.ap-southeast-2.keboola.com": {
-        "provisioning_url": "https://gooddata-provisioning.ap-southeast-2.keboola.com",
-        "gd_url": "https://secure.gooddata.com"
+        "gooddataUrl": "https://secure.gooddata.com"
     }
   }

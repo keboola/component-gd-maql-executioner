@@ -119,3 +119,8 @@ class MAQLComponent(KBCEnvHandler):
 
                     integrationId = self.client.sendQuery(maqlQuery)
                     self.client.checkEtlStatus(integrationId)
+
+        else:
+
+            integrationId = self.client.sendQuery(self.paramQuery)
+            self.client.checkEtlStatus(integrationId)
