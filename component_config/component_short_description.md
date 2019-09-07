@@ -1,1 +1,1 @@
-Testing functional sample extractor for purposes of the python component template. 
+MAQL is an analytical language used by GoodData.

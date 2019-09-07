@@ -11,4 +11,4 @@ RUN pip install -r /code/requirements.txt
 WORKDIR /code/
 
 
-CMD ["python3", "-u", "/code/src/component.py"]
+CMD ["python3", "-u", "/code/src/main.py"]
