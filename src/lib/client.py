@@ -125,12 +125,21 @@ class MAQLClient(HttpClientBase):
 
         while jobRunning is True:
 
-            respJs = self.get(url=reqUrl, headers=self.reqHeader)
+            respReq = self.get_raw(url=reqUrl, headers=self.reqHeader)
+            respSc, respJs = respReq.status_code, respReq.json()
+
+            if respSc == 401:
+                self._buildHeader()
+                continue
 
             taskStateMsg = respJs['taskState']['msg']
             taskStateStatus = respJs['taskState']['status']
 
             if taskStateStatus == 'RUNNING':
+
+                elapsedTime = int(time.time() - startTime)
+                if (elapsedTime % 600) == 0:
+                    logging.info(f"ETL task {integrationId} is still running.")
 
                 time.sleep(5)
 
